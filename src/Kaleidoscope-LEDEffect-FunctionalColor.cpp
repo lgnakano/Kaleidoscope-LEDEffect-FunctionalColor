@@ -3,6 +3,72 @@
 
 namespace kaleidoscope {
 
+constexpr cRGB LEDFunctionalColor::colorMap::defaultColor;
+constexpr cRGB LEDFunctionalColor::colorMap::shift;
+constexpr cRGB LEDFunctionalColor::colorMap::control;
+  //Command keys (macOS) or Windows Logo keys
+constexpr cRGB LEDFunctionalColor::colorMap::gui;//dim(pink, 190);
+constexpr cRGB LEDFunctionalColor::colorMap::alt;
+  // Includes all the above modifiers
+constexpr cRGB LEDFunctionalColor::colorMap::modifier;
+
+constexpr cRGB LEDFunctionalColor::colorMap::alpha;
+constexpr cRGB LEDFunctionalColor::colorMap::number;
+constexpr cRGB LEDFunctionalColor::colorMap::punctuation;
+constexpr cRGB LEDFunctionalColor::colorMap::function;
+constexpr cRGB LEDFunctionalColor::colorMap::navigation;
+constexpr cRGB LEDFunctionalColor::colorMap::system;
+constexpr cRGB LEDFunctionalColor::colorMap::arrow;
+constexpr cRGB LEDFunctionalColor::colorMap::keypad;
+constexpr cRGB LEDFunctionalColor::colorMap::media;
+
+constexpr cRGB LEDFunctionalColor::colorMap::mouseWheel;
+constexpr cRGB LEDFunctionalColor::colorMap::mouseButton;
+constexpr cRGB LEDFunctionalColor::colorMap::mouseWarp;
+constexpr cRGB LEDFunctionalColor::colorMap::mouseMove;
+  // Includes all above mouse functions
+constexpr cRGB LEDFunctionalColor::colorMap::mouse;
+
+  // Important single keys
+constexpr cRGB LEDFunctionalColor::colorMap::space;
+constexpr cRGB LEDFunctionalColor::colorMap::tab;
+constexpr cRGB LEDFunctionalColor::colorMap::enter;
+constexpr cRGB LEDFunctionalColor::colorMap::backspace;
+constexpr cRGB LEDFunctionalColor::colorMap::escape;
+constexpr cRGB LEDFunctionalColor::colorMap::del;
+constexpr cRGB LEDFunctionalColor::colorMap::fn;
+  //Numlock or any use of lockLayer
+constexpr cRGB LEDFunctionalColor::colorMap::lock;
+constexpr cRGB LEDFunctionalColor::colorMap::LEDEffectNext;
+  // Where's the any key?
+
+constexpr cRGB LEDFunctionalColor::colorMapDefault::shift;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::control;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::gui;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::alt;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::alpha;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::number;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::punctuation;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::function;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::navigation;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::system;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::arrow;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::keypad;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::mouseWheel;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::mouseButton;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::mouseWarp;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::mouseMove;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::media;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::space;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::tab;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::enter;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::backspace;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::escape;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::del;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::fn;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::lock;
+constexpr cRGB LEDFunctionalColor::colorMapDefault::LEDEffectNext;
+
 // themeDefault just sets the default theme.
 void LEDFunctionalColor::FCPlugin::themeDefault() {
   this->setColorLookup(&LEDFunctionalColor::groupColorLookup<LEDFunctionalColor::colorMapDefault>);
@@ -79,7 +145,7 @@ void LEDFunctionalColor::FCPlugin::onActivate(void) {
 
 //When the active layer is changed, update the colors.
 void LEDFunctionalColor::FCPlugin::update(void) {
-  uint8_t current_layerState = ::Layer_::getLayerState();
+  uint8_t current_layerState = Layer_::getLayerState();
 
   // Only set the colors again if the active layer changed
   if (current_layerState != last_layerState) { this->refresh(); }
