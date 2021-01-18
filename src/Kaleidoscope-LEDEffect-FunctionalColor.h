@@ -61,8 +61,8 @@ struct colorMapDefault : public colorMap {
   static constexpr cRGB control = dim(lightskyblue, 190);
   static constexpr cRGB gui = dim(pink, 190);
   static constexpr cRGB alt = dim(forestgreen, 190);
-  static constexpr cRGB alpha = dim(warmwhite, 110);
-  static constexpr cRGB number = dim(white, 190);
+  static constexpr cRGB alpha = dim(forestgreen, 255);
+  static constexpr cRGB number = dim(cyan, 190);
   static constexpr cRGB punctuation = dim(gold, 190);
   static constexpr cRGB function = dim(red, 190);
   static constexpr cRGB navigation = dim(yellow, 190);
@@ -78,7 +78,7 @@ struct colorMapDefault : public colorMap {
   static constexpr cRGB tab = dim(white, 140);
   static constexpr cRGB enter = dim(white, 250);
   static constexpr cRGB backspace = dim(red, 140);
-  static constexpr cRGB escape      = dim(red, 130);
+  static constexpr cRGB escape      = dim(red, 255);
   static constexpr cRGB del = dim(red, 255);
   static constexpr cRGB fn = dim(white, 250);
   static constexpr cRGB lock = dim(purple, 190);
